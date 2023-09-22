@@ -11,15 +11,14 @@
     >
   </nz-header>
   <nz-content class="survey-content">
-    <h1>Now start your journey of discovery in PA Youth!</h1>
-    <div nz-row [nzGutter]="[16, 24]">
+    <div nz-row [nzGutter]="[16, 24]" class="login">
       <div nz-col class="button-group" [nzSpan]="24">
         <button
           nz-button
-          nzType="primary"
+          nzType="default"
           [nzSize]="size"
           nzShape="round"
-          [routerLink]="['/voterRegistration']"
+          [routerLink]="['/appLogin']"
         >
           Login
         </button>

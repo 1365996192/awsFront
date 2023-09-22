@@ -21,6 +21,8 @@ import { SubmitLoadingComponent } from './information-get/submit-loading/submit-
 import { AppRegLoadingComponent } from './app-reg-loading/app-reg-loading.component';
 import { VoterRegLoadingComponent } from './voter-reg-loading/voter-reg-loading.component';
 
+import { AppLoginComponent } from './app-login/app-login.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
   { path: 'start', component: BeginPageComponent },
@@ -32,7 +34,7 @@ const routes: Routes = [
   { path: 'submitLoading', component: SubmitLoadingComponent },
   { path: 'appRegLoading', component: AppRegLoadingComponent },
   { path: 'voterRegLoading', component: VoterRegLoadingComponent },
-
+  {path:'appLogin', component:AppLoginComponent},
   {
     path: 'survey',
     component: SurveyPageComponent,
@@ -42,9 +44,7 @@ const routes: Routes = [
       { path: 'three', component: SurveyThreePageComponent },
       { path: 'three2', component: SurveyThree2PageComponent },
       { path: 'end', component: SurveyEndComponent },
-      { path: '', component: SurveyOnePageComponent }
-    ]
-  },
+      { path: '', component: SurveyOnePageComponent }]},
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

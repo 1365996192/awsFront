@@ -1,5 +1,5 @@
-<nz-layout class="dashboard">
-  <nz-header class="dashboard-header">
+<!-- <nz-layout class="dashboard"> -->
+<!-- <nz-header class="dashboard-header">
     <nz-page-header nzTitle="Dashboard"
       ><nz-page-header-extra>
         <button
@@ -15,9 +15,13 @@
       </nz-page-header-extra></nz-page-header
     >
   </nz-header>
-  <nz-content class="dashboard-content">
-    <router-outlet></router-outlet>
-  </nz-content>
+  <nz-content class="dashboard-content"> -->
+<div class="dashboard-content">
+  <router-outlet></router-outlet>
+  <div class="dashboard-nav"></div>
+</div>
+
+<!-- </nz-content>
   <nz-footer class="dashboard-footer"
     ><nz-button-group>
       <button nz-button nzType="default" (click)="goToMain()">Homepage</button>
@@ -27,5 +31,15 @@
       <button nz-button nzType="default" (click)="goToNews()">News</button>
       <button nz-button nzType="default" (click)="goToMe()">Me</button>
     </nz-button-group></nz-footer
-  >
-</nz-layout>
+  > -->
+<!-- <nz-button-group>
+    <div class="tab-button">
+      <button nz-button nzType="default" (click)="goToMain()">Homepage</button>
+      <button nz-button nzType="default" (click)="goToCommunity()">
+        Community
+      </button>
+      <button nz-button nzType="default" (click)="goToNews()">News</button>
+      <button nz-button nzType="default" (click)="goToMe()">Me</button>
+    </div>
+  </nz-button-group> -->
+<!-- </nz-layout> -->

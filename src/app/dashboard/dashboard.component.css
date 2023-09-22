@@ -5,6 +5,11 @@
   height: 100%;
   background-color: white;
 }
+.dashboard-content .dashboard-nav {
+  position: absolute;
+  bottom: 100px;
+  z-index: 99;
+}
 .dashboard .dashboard-header,
 .dashboard-footer {
   padding: 0;
@@ -18,4 +23,8 @@
 
 .dashboard .dashboard-footer .button {
   height: 50px;
+}
+nz-button-group .tab-button {
+  position: absolute;
+  top: 90%;
 }

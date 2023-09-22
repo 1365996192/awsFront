@@ -3,39 +3,62 @@
     <nz-page-header
       class="site-page-header"
       (nzBack)="onBack()"
-      nzBackIcon
-      nzTitle="Back"
-      ><nz-page-header-extra>
-        <nz-page-header-subtitle>Quick survey</nz-page-header-subtitle>
-      </nz-page-header-extra></nz-page-header
-    >
+      nzTitle="Login"
+    ></nz-page-header>
   </nz-header>
   <nz-content class="survey-content">
-    <div class="title">
-      <h1>Where you register before?</h1>
-    </div>
     <div nz-row [nzGutter]="[16, 24]">
       <div nz-col class="button-group" [nzSpan]="24">
         <div class="app-registration-container">
           <nz-card class="app-registration-nz-card">
             <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="state"
-                  >State</nz-form-label
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email"
+                  >E-mail</nz-form-label
                 >
                 <nz-form-control
                   [nzSm]="14"
                   [nzXs]="24"
-                  nzErrorTip="The input is not valid state!"
+                  nzErrorTip="The input is not valid E-mail!"
                 >
                   <input
                     nz-input
-                    formControlName="state"
-                    id="state"
-                    placeholder="Please input state name!"
+                    formControlName="email"
+                    placeholder="Eg：xxx@example.com"
                   />
                 </nz-form-control>
               </nz-form-item>
+              <nz-form-item>
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired
+                  >Authorization Code</nz-form-label
+                >
+                <nz-form-control
+                  [nzSm]="14"
+                  [nzXs]="24"
+                  nzErrorTip="The code is not valid authorization code!"
+                >
+                  <input
+                    nz-input
+                    formControlName="code"
+                    placeholder="Please input code!"
+                  />
+                </nz-form-control>
+                <button
+                  nz-button
+                  nzType="default"
+                  (click)="sendVerificationCode()"
+                  [nzLoading]="sendingCode"
+                >
+                  Send Code
+                </button>
+              </nz-form-item>
+              <nz-form-item>
+                <button nz-button nzType="primary" [nzLoading]="loggingIn">
+                  Submit
+                </button>
+              </nz-form-item>
+            </form>
+            <!-- <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
               <nz-form-item>
                 <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email"
                   >E-mail</nz-form-label
@@ -54,21 +77,24 @@
                 </nz-form-control>
               </nz-form-item>
               <nz-form-item>
-                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone"
-                  >Phone</nz-form-label
+                <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired
+                  >Authorization Code</nz-form-label
                 >
                 <nz-form-control
                   [nzSm]="14"
                   [nzXs]="24"
-                  nzErrorTip="The input is not valid phone number!"
+                  nzErrorTip="The code is not valid phone number!"
                 >
                   <input
                     nz-input
-                    formControlName="phone"
-                    id="phone"
-                    placeholder="Please input phone number!"
+                    formControlName="authCode"
+                    id="authCode"
+                    placeholder="Please input code!"
                   />
                 </nz-form-control>
+                <button nz-button nzType="default" (click)="getAuthCode()">
+                  Send Code
+                </button>
               </nz-form-item>
 
               <div class="register-submit-button">
@@ -77,7 +103,6 @@
                     <button
                       nz-button
                       nzType="primary"
-                      nzShape="round"
                       style="margin-left: 30px"
                     >
                       Submit
@@ -85,7 +110,7 @@
                   </nz-form-control>
                 </nz-form-item>
               </div>
-            </form>
+            </form> -->
           </nz-card>
         </div>
       </div>

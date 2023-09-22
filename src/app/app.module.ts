@@ -38,6 +38,7 @@ import { AppRegistrationComponent } from './app-registration/app-registration.co
 import { InformationGetComponent } from './information-get/information-get.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SubmitLoadingComponent } from './information-get/submit-loading/submit-loading.component';
+import { AppLoginComponent } from './app-login/app-login.component';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
 import { AppRegLoadingComponent } from './app-reg-loading/app-reg-loading.component';
@@ -73,7 +74,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     UserLoginComponent,
     SubmitLoadingComponent,
     AppRegLoadingComponent,
-    VoterRegLoadingComponent
+    VoterRegLoadingComponent,
+    AppLoginComponent
   ],
   //这里放组件，然后其他文件从这个module.ts来引入？用了generate的话这里会自动添加
   imports: [

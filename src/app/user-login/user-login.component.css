@@ -3,7 +3,7 @@
   padding: 10px;
   width: 100%;
   height: 100%;
-  background-image: url("../asset/survey-bac.png");
+  background-image: url("../asset/userLogin-bac.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -13,8 +13,8 @@
   background-color: transparent;
 }
 .survey-content {
-  padding: 0 20px;
-  margin-top: 30px;
+  padding: 0 10px;
+  margin-top: 400px;
   height: 100px;
 }
 .button-group {
@@ -22,5 +22,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 5px;
 }
