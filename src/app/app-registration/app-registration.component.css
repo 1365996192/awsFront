@@ -1,8 +1,32 @@
-.app-registration-container {
+/* .app-registration-container {
     height: 100%;
     width: 100%;
     display: flex;
     padding: 16px;
+} */
+
+.app-registration {
+    position: absolute;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+}
+
+.app-registration .app-registration-header {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: white;
+    display: flex;
+}
+
+.app-registration-content {
+    padding: 0 20px;
+    /* margin-top: 30px; */
+    height: 100px;
+    position: relative;
 }
 
 .app-registration-nz-card {
