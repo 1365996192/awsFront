@@ -18,7 +18,6 @@ import { AppLoginService } from '../service/app-login.service';
 })
 export class AppLoginComponent {
 
-  loginForm: FormGroup;
   sendingCode = false;
   loggingIn = false;
   validateForm: FormGroup<{
@@ -72,19 +71,19 @@ export class AppLoginComponent {
       code: ['', [Validators.pattern(/^\d{6}$/),Validators.required]],
     });
 
-    // 初始化 loginForm
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.email, Validators.required]],
-      code: ['', [Validators.pattern(/^\d{6}$/),Validators.required]],
-    });
-    this.i18n.setLocale(en_US);
+    // // 初始化 validateForm
+    // this.validateForm = this.fb.group({
+    //   email: ['', [Validators.email, Validators.required]],
+    //   code: ['', [Validators.pattern(/^\d{6}$/),Validators.required]],
+    // });
+    // this.i18n.setLocale(en_US);
   }
   size: NzButtonSize = 'large';
   onBack() {
     this.router.navigateByUrl("dashboard");  //createteachclass是我想要跳转到的界面，你直接写你需要跳转到的界面路径就Ok了
   }
   sendVerificationCode() {
-    const email = this.loginForm.get('email').value;
+    const email = this.validateForm.get('email').value;
 
     this.sendingCode = true;
     this.service.sendAuthCode(email).subscribe(
@@ -101,8 +100,8 @@ export class AppLoginComponent {
   }
 
   login() {
-    const email = this.loginForm.get('email').value;
-    const verificationCode = this.loginForm.get('code').value;
+    const email = this.validateForm.get('email').value;
+    const verificationCode = this.validateForm.get('code').value;
 
     if (!email || !verificationCode) {
       return;
