@@ -40,6 +40,8 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { SubmitLoadingComponent } from './information-get/submit-loading/submit-loading.component';
 import { registerLocaleData } from '@angular/common';
 import zh from '@angular/common/locales/zh';
+// import { AppRegistrationLoadingComponent } from './app-registration/app-registration-loading/app-registration-loading.component';
+// import { VoterRegistrationLoadingComponent } from './voter-registration/voter-registration-loading/voter-registration-loading.component';
 registerLocaleData(zh);
 
 const antDesignIcons = AllIcons as {

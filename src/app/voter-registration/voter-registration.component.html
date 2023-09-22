@@ -1,6 +1,6 @@
 <nz-layout class="voter-registration">
     <nz-header class="voter-registration-header">
-        <h1>Voter Registration</h1>
+        <h1>Become a Voter</h1>
     </nz-header>
     <nz-content class="voter-registration-content">
         <nz-card class="voter-registration-nz-card">
@@ -75,12 +75,12 @@
                 </nz-form-item>
 
                 <div class="register-agree">
-                    <nz-form-item nz-row class="register-area">
+                    <nz-form-item nz-row class="register-area" style="margin-left:-100px;">
                         <nz-form-control [nzSpan]="14" [nzOffset]="6">
                             <label nzRequired nz-checkbox formControlName="agree">
                                 <span>
-                                    I have read the
-                                    <a>agreement</a>
+                                    I have read and accept the
+                                    <a>agreement.</a>
                                 </span>
                             </label>
                         </nz-form-control>
@@ -89,7 +89,8 @@
                 <div class="register-submit-button">
                     <nz-form-item nz-row class="register-area">
                         <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                            <button nz-button nzType="primary" style="margin-left:30px">Register</button>
+                            <button nz-button [nzSize]="size" nzShape="round" nzType="primary"
+                                style="margin-left:30px">Register</button>
                         </nz-form-control>
                     </nz-form-item>
                 </div>

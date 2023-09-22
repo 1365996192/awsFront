@@ -21,32 +21,35 @@ import { SubmitLoadingComponent } from './information-get/submit-loading/submit-
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
-  { path:'start',component:BeginPageComponent},
-  {path:'interest',component:InterestPageComponent},
-  {path:'voterRegistration',component:VoterRegistrationComponent},
-  {path:'appRegistration',component:AppRegistrationComponent},
-  {path:'inforGet',component:InformationGetComponent},
-  {path:'userLogin',component:UserLoginComponent },
-  {path:'submitLoading', component:SubmitLoadingComponent},
-  {path:'survey',
-  component:SurveyPageComponent,
-  children:[
-    {path:'one',component:SurveyOnePageComponent},
-    {path:'two',component:SurveyTwoPageComponent},
-    {path:'three',component:SurveyThreePageComponent},
-    {path:'three2',component:SurveyThree2PageComponent},
-    {path:'end',component:SurveyEndComponent},
-    {path:'',component:SurveyOnePageComponent}
+  { path: 'start', component: BeginPageComponent },
+  { path: 'interest', component: InterestPageComponent },
+  { path: 'voterRegistration', component: VoterRegistrationComponent },
+  { path: 'appRegistration', component: AppRegistrationComponent },
+  { path: 'inforGet', component: InformationGetComponent },
+  { path: 'userLogin', component: UserLoginComponent },
+  { path: 'submitLoading', component: SubmitLoadingComponent },
+  {
+    path: 'survey',
+    component: SurveyPageComponent,
+    children: [
+      { path: 'one', component: SurveyOnePageComponent },
+      { path: 'two', component: SurveyTwoPageComponent },
+      { path: 'three', component: SurveyThreePageComponent },
+      { path: 'three2', component: SurveyThree2PageComponent },
+      { path: 'end', component: SurveyEndComponent },
+      { path: '', component: SurveyOnePageComponent }
     ]
   },
-  {path:'dashboard',component:DashboardComponent,
-  children:[
-    {path:'main',component:DashboardMainComponent},
-    {path:'community', component:DashboardCommunityComponent},
-    {path:'news',component:DashboardNewsComponent},
-    {path:'me', component:DashboardMeComponent},
-    {path:'',component:DashboardMainComponent}
-  ]}
+  {
+    path: 'dashboard', component: DashboardComponent,
+    children: [
+      { path: 'main', component: DashboardMainComponent },
+      { path: 'community', component: DashboardCommunityComponent },
+      { path: 'news', component: DashboardNewsComponent },
+      { path: 'me', component: DashboardMeComponent },
+      { path: '', component: DashboardMainComponent }
+    ]
+  }
 ];
 
 @NgModule({

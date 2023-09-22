@@ -10,6 +10,7 @@ import {
   Validators
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NzButtonSize } from 'ng-zorro-antd/button';
 
 @Component({
   selector: 'app-app-registration',
@@ -55,4 +56,5 @@ export class AppRegistrationComponent {
     });
     this.i18n.setLocale(en_US);
   }
+  size: NzButtonSize = 'large';
 }

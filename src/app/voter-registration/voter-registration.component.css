@@ -9,8 +9,9 @@
 
 .voter-registration .voter-registration-header {
     padding: 0;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 30px;
+    margin-left: 100px;
     background-color: white;
     display: flex;
 }
