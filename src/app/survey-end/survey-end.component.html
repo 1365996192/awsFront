@@ -1,1 +1,29 @@
-<p>survey-end works!</p>
+<nz-page-header
+  class="site-page-header"
+  (nzBack)="onBack()"
+  nzBackIcon
+  nzTitle="Title"
+  nzSubtitle="This is a subtitle"
+></nz-page-header>
+<h1>Do You Want To be a Voter?</h1>
+<button
+  nz-button
+  nzType="primary"
+  [nzSize]="size"
+  nzShape="round"
+  [routerLink]="['/voterRegistration']"
+>
+  Become a Voter
+</button>
+<button
+  nz-button
+  nzType="primary"
+  [nzSize]="size"
+  nzShape="round"
+  [routerLink]="['/dashboard']"
+>
+  No
+</button>
+<div>
+  <a nz-button nzType="link" [routerLink]="['/dashboard']">Skip</a>
+</div>

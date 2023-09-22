@@ -29,7 +29,8 @@ const routes: Routes = [
     {path:'two',component:SurveyTwoPageComponent},
     {path:'three',component:SurveyThreePageComponent},
     {path:'three2',component:SurveyThree2PageComponent},
-    {path:'end',component:SurveyEndComponent}
+    {path:'end',component:SurveyEndComponent},
+    {path:'',component:SurveyOnePageComponent}
     ]
   },
   {path:'dashboard',component:DashboardComponent,
@@ -37,7 +38,8 @@ const routes: Routes = [
     {path:'main',component:DashboardMainComponent},
     {path:'community', component:DashboardCommunityComponent},
     {path:'news',component:DashboardNewsComponent},
-    {path:'me', component:DashboardMeComponent}
+    {path:'me', component:DashboardMeComponent},
+    {path:'',component:DashboardMainComponent}
   ]}
 ];
 

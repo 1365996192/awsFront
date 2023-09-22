@@ -1,32 +1,39 @@
-<nz-layout>
-  <nz-header class="use-header">Interest</nz-header>
-  <nz-content class="use-background">
+<nz-layout class="interest">
+  <nz-header class="interest-header"
+    ><nz-page-header
+      nzTitle="Interest"
+      nzSubtitle="Please choose your interests"
+    ></nz-page-header
+  ></nz-header>
+  <nz-content class="interest-content">
+    <div class="button-group">
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Human Rights
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Racial Equality
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        LGBTQ+ Rights
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Education
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Healthcare
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Social Justice
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Local Politics
+      </button>
+      <button nz-button nzType="default" [nzSize]="size" nzShape="round">
+        Immigration
+      </button>
+    </div>
     <div nz-row [nzGutter]="[16, 24]">
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="12">
-        <div class="inner-box">col-6</div>
-      </div>
-      <div nz-col class="gutter-row" [nzSpan]="24">
+      <div nz-col class="submit" [nzSpan]="24">
         <div>
           <button
             nz-button
@@ -34,10 +41,12 @@
             [nzSize]="size"
             nzShape="round"
             (click)="goToSurvey()"
-          ></button>
+          >
+            Submit
+          </button>
         </div>
       </div>
-      <div nz-col class="gutter-row" [nzSpan]="24">
+      <div nz-col class="skip" [nzSpan]="24">
         <a nz-button nzType="link" [routerLink]="['/survey/one']">Skip</a>
       </div>
     </div>

@@ -1,9 +1,52 @@
-<nz-page-header
+<nz-layout class="survey">
+  <nz-header class="survey-header">
+    <nz-page-header
+      class="site-page-header"
+      (nzBack)="onBack()"
+      nzBackIcon
+      nzTitle="Back"
+      ><nz-page-header-extra>
+        <nz-page-header-subtitle>This is a quiz</nz-page-header-subtitle>
+      </nz-page-header-extra></nz-page-header
+    >
+  </nz-header>
+  <nz-content class="survey-content">
+    <h1>Do you want to vote for Pennsylvania?</h1>
+    <div nz-row [nzGutter]="[16, 24]">
+      <div nz-col class="button-group" [nzSpan]="24">
+        <button
+          nz-button
+          nzType="primary"
+          [nzSize]="size"
+          nzShape="round"
+          [routerLink]="['/survey/two']"
+        >
+          Yes
+        </button>
+      </div>
+      <div nz-col class="button-group" [nzSpan]="24">
+        <button
+          nz-button
+          nzType="primary"
+          [nzSize]="size"
+          nzShape="round"
+          [routerLink]="['/dashboard']"
+        >
+          No
+        </button>
+      </div>
+      <div nz-col class="skip" [nzSpan]="24">
+        <a nz-button nzType="link" [routerLink]="['/dashboard']">Skip</a>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
+
+<!-- <nz-page-header
   class="site-page-header"
   (nzBack)="onBack()"
   nzBackIcon
-  nzTitle="Title"
-  nzSubtitle="This is a subtitle"
+  nzTitle="Back"
 ></nz-page-header>
 <h1>Q1</h1>
 <p>What....?</p>
@@ -27,4 +70,4 @@
 </button>
 <div>
   <a nz-button nzType="link" [routerLink]="['/dashboard']">Skip</a>
-</div>
+</div> -->

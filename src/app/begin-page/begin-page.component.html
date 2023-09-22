@@ -1,24 +1,20 @@
 <nz-layout>
-  <!-- <nz-content class="begin-page"> -->
-  <div nz-row>
-    <div nz-col nzSpan="8">col-8</div>
-    <div nz-col nzSpan="8" nzOffset="8">col-8</div>
+  <div class="begin-content">
+    <div class="title">
+      <h2>We Register!</h2>
+      <h2>We Vote!</h2>
+      <h2>We make life better!</h2>
+      <h3>——PA Youth Vote</h3>
+    </div>
+    <button
+      nz-button
+      nzType="primary"
+      [nzSize]="size"
+      nzShape="round"
+      (click)="goToInterest()"
+      class="btn"
+    >
+      KNOW ABOUT US
+    </button>
   </div>
-  <div nz-row>
-    <div nz-col nzSpan="6" nzOffset="6">col-6 col-offset-6</div>
-    <div nz-col nzSpan="6" nzOffset="6">col-6 col-offset-6</div>
-  </div>
-  <div nz-row>
-    <div nz-col nzSpan="12" nzOffset="6">col-12 col-offset-6</div>
-  </div>
-  <!-- </nz-content> -->
-  <button
-    nz-button
-    nzType="primary"
-    [nzSize]="size"
-    nzShape="round"
-    (click)="goToInterest()"
-  >
-    KNOW ABOUT US
-  </button>
 </nz-layout>
