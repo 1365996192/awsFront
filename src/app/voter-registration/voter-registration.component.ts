@@ -47,6 +47,8 @@ export class VoterRegistrationComponent {
         birth:this.voterValidateForm.value.dob,
         city: this.voterValidateForm.value.city,
         authCode:this.voterValidateForm.value.authCode,
+        zipCode:this.voterValidateForm.value.zipCode,
+        country:this.voterValidateForm.value.country
       };
       this.service.voterRegistration(data).subscribe((response: any) => {
         console.log('submit', this.voterValidateForm.value);
