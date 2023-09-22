@@ -15,6 +15,8 @@ import { DashboardNewsComponent } from './dashboard/dashboard-news/dashboard-new
 import { DashboardMeComponent } from './dashboard/dashboard-me/dashboard-me.component';
 import { VoterRegistrationComponent } from './voter-registration/voter-registration.component';
 import { AppRegistrationComponent } from './app-registration/app-registration.component';
+import { InformationGetComponent } from './information-get/information-get.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -22,6 +24,7 @@ const routes: Routes = [
   {path:'interest',component:InterestPageComponent},
   {path:'voterRegistration',component:VoterRegistrationComponent},
   {path:'appRegistration',component:AppRegistrationComponent},
+  {path:'inforGet',component:InformationGetComponent},
   {path:'survey',
   component:SurveyPageComponent,
   children:[

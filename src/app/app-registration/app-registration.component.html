@@ -1,1 +1,65 @@
-<p>app-registration works!</p>
+<nz-layout class="app-registration">
+    <nz-header class="app-registration-header">
+        <h1>Welcom to PA Youth Vote!</h1>
+    </nz-header>
+    <nz-content class="app-registration-content">
+        <nz-card class="app-registration-nz-card">
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName">First Name</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid First Name!">
+                        <input nz-input formControlName="firstName" id="firstName"
+                            placeholder="Please input your first name!" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName">Last Name</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Last Name!">
+                        <input nz-input formControlName="lastName" id="lastName"
+                            placeholder="Please input your last name!" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Birth Date</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid date!">
+                        <nz-date-picker nzPlaceHolder="Please choose birth date" formControlName="dob"
+                            style="width: 100%" required></nz-date-picker>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+                        <input nz-input formControlName="email" id="email" placeholder="Ex：xxx@example.com" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone">Phone</nz-form-label>
+                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid phone number!">
+                        <input nz-input formControlName="phone" id="phone" placeholder="Please input phone number!" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <div class="register-agree">
+                    <nz-form-item nz-row class="register-area">
+                        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                            <label nzRequired nz-checkbox formControlName="agree">
+                                <span>
+                                    I have read the
+                                    <a>agreement</a>
+                                </span>
+                            </label>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+                <div class="register-submit-button">
+                    <nz-form-item nz-row class="register-area">
+                        <nz-form-control [nzSpan]="14" [nzOffset]="6">
+                            <button nz-button nzType="primary" style="margin-left:30px">Register</button>
+                        </nz-form-control>
+                    </nz-form-item>
+                </div>
+            </form>
+        </nz-card>
+    </nz-content>
+</nz-layout>

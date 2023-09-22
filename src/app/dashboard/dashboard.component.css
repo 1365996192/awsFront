@@ -1,0 +1,21 @@
+.dashboard {
+  position: absolute;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+.dashboard .dashboard-header,
+.dashboard-footer {
+  padding: 0;
+  background-color: white;
+}
+.dashboard .dashboard-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard .dashboard-footer .button {
+  height: 50px;
+}

@@ -11,7 +11,7 @@ export class SurveyThreePageComponent {
   constructor(private router: Router){
 
   }
-  size: NzButtonSize = 'default';
+  size: NzButtonSize = 'large';
   onBack() {
     this.router.navigateByUrl("/survey/two");  //createteachclass是我想要跳转到的界面，你直接写你需要跳转到的界面路径就Ok了
   }
