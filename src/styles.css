@@ -1,5 +1,7 @@
 /* @import "../node_modules/ng-zorro-antd/ng-zorro-antd.min.css"; */
 
 .mat-typography {
+  display: flex;
   color: aqua;
+  height: 100vh;
 }

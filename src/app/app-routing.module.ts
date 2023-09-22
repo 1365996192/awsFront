@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DataDisplayComponent } from './data-display/data-display.component';
 import { BeginPageComponent } from './begin-page/begin-page.component';
 import { InterestPageComponent } from './interest-page/interest-page.component';
 import { SurveyOnePageComponent } from './survey-one-page/survey-one-page.component';
 import { SurveyTwoPageComponent } from './survey-two-page/survey-two-page.component';
 import { SurveyThreePageComponent } from './survey-three-page/survey-three-page.component';
+import { SurveyThree2PageComponent } from './survey-three2-page/survey-three2-page.component';
 import { SurveyPageComponent } from './survey-page/survey-page.component';
 import { SurveyEndComponent } from './survey-end/survey-end.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -13,18 +13,22 @@ import { DashboardMainComponent } from './dashboard/dashboard-main/dashboard-mai
 import { DashboardCommunityComponent } from './dashboard/dashboard-community/dashboard-community.component';
 import { DashboardNewsComponent } from './dashboard/dashboard-news/dashboard-news.component';
 import { DashboardMeComponent } from './dashboard/dashboard-me/dashboard-me.component';
+import { VoterRegistrationComponent } from './voter-registration/voter-registration.component';
+import { AppRegistrationComponent } from './app-registration/app-registration.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
-  { path: 'datas', component: DataDisplayComponent},
-  { path:'begin',component:BeginPageComponent},
+  { path: '', redirectTo: '/start', pathMatch: 'full' },
+  { path:'start',component:BeginPageComponent},
   {path:'interest',component:InterestPageComponent},
+  {path:'voterRegistration',component:VoterRegistrationComponent},
+  {path:'appRegistration',component:AppRegistrationComponent},
   {path:'survey',
   component:SurveyPageComponent,
   children:[
     {path:'one',component:SurveyOnePageComponent},
     {path:'two',component:SurveyTwoPageComponent},
     {path:'three',component:SurveyThreePageComponent},
+    {path:'three2',component:SurveyThree2PageComponent},
     {path:'end',component:SurveyEndComponent}
     ]
   },

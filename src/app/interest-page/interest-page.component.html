@@ -1,1 +1,45 @@
-<p>interest-page works!</p>
+<nz-layout>
+  <nz-header class="use-header">Interest</nz-header>
+  <nz-content class="use-background">
+    <div nz-row [nzGutter]="[16, 24]">
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="12">
+        <div class="inner-box">col-6</div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="24">
+        <div>
+          <button
+            nz-button
+            nzType="primary"
+            [nzSize]="size"
+            nzShape="round"
+            (click)="goToSurvey()"
+          ></button>
+        </div>
+      </div>
+      <div nz-col class="gutter-row" [nzSpan]="24">
+        <a nz-button nzType="link" [routerLink]="['/survey/one']">Skip</a>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>
