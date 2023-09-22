@@ -12,19 +12,21 @@
 }
 .dashboard .dashboard-header,
 .dashboard-footer {
+  position: absolute;
   padding: 0;
-  background-color: white;
+  background-color: transparent;
+}
+.dashboard .dashboard-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 15px;
+  left: 35px;
+  z-index: 99;
 }
 .dashboard .dashboard-footer {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.dashboard .dashboard-footer .button {
-  height: 50px;
-}
-nz-button-group .tab-button {
-  position: absolute;
-  top: 90%;
+  top: 95%;
 }
