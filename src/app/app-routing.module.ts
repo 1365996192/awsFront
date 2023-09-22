@@ -16,7 +16,8 @@ import { DashboardMeComponent } from './dashboard/dashboard-me/dashboard-me.comp
 import { VoterRegistrationComponent } from './voter-registration/voter-registration.component';
 import { AppRegistrationComponent } from './app-registration/app-registration.component';
 import { InformationGetComponent } from './information-get/information-get.component';
-
+import { UserLoginComponent } from './user-login/user-login.component';
+import { SubmitLoadingComponent } from './information-get/submit-loading/submit-loading.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -25,6 +26,8 @@ const routes: Routes = [
   {path:'voterRegistration',component:VoterRegistrationComponent},
   {path:'appRegistration',component:AppRegistrationComponent},
   {path:'inforGet',component:InformationGetComponent},
+  {path:'userLogin',component:UserLoginComponent },
+  {path:'submitLoading', component:SubmitLoadingComponent},
   {path:'survey',
   component:SurveyPageComponent,
   children:[

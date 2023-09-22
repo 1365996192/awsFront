@@ -1,0 +1,43 @@
+<nz-layout class="survey">
+  <nz-header class="survey-header">
+    <nz-page-header
+      class="site-page-header"
+      (nzBack)="onBack()"
+      nzBackIcon
+      nzTitle="Back"
+      ><nz-page-header-extra>
+        <nz-page-header-subtitle>Login to PA Youth</nz-page-header-subtitle>
+      </nz-page-header-extra></nz-page-header
+    >
+  </nz-header>
+  <nz-content class="survey-content">
+    <h1>Now start your journey of discovery in PA Youth!</h1>
+    <div nz-row [nzGutter]="[16, 24]">
+      <div nz-col class="button-group" [nzSpan]="24">
+        <button
+          nz-button
+          nzType="primary"
+          [nzSize]="size"
+          nzShape="round"
+          [routerLink]="['/voterRegistration']"
+        >
+          Login
+        </button>
+      </div>
+      <div nz-col class="button-group" [nzSpan]="24">
+        <button
+          nz-button
+          nzType="default"
+          [nzSize]="size"
+          nzShape="round"
+          [routerLink]="['/appRegistration']"
+        >
+          Register
+        </button>
+      </div>
+      <div nz-col class="button-group" [nzSpan]="24">
+        <a nz-button nzType="link">Forget your password?</a>
+      </div>
+    </div>
+  </nz-content>
+</nz-layout>

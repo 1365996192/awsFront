@@ -14,7 +14,7 @@ export class DashboardComponent {
   size: NzButtonSize = 'small';
 
   goToLogin(){
-    this.router.navigateByUrl("appRegistration")
+    this.router.navigateByUrl("userLogin")
   }
   goToMain(){
     this.router.navigateByUrl("dashboard/main")
