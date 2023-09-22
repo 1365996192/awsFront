@@ -35,6 +35,7 @@ import { DashboardNewsComponent } from './dashboard/dashboard-news/dashboard-new
 import { DashboardMeComponent } from './dashboard/dashboard-me/dashboard-me.component';
 import { VoterRegistrationComponent } from './voter-registration/voter-registration.component';
 import { AppRegistrationComponent } from './app-registration/app-registration.component';
+import { InformationGetComponent } from './information-get/information-get.component';
 
 
 import { registerLocaleData } from '@angular/common';
@@ -63,7 +64,8 @@ const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesign
     DashboardNewsComponent,
     DashboardMeComponent,
     VoterRegistrationComponent,
-    AppRegistrationComponent
+    AppRegistrationComponent,
+    InformationGetComponent
   ],
   //这里放组件，然后其他文件从这个module.ts来引入？用了generate的话这里会自动添加
   imports: [
