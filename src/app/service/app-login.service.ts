@@ -19,4 +19,12 @@ export class AppLoginService {
     // 发送登录请求，使用邮箱和验证码
     return this.http.post('https://pz3unai3uq.us-east-1.awsapprunner.com/login', { email, authCode});
   }
+
+  appRegistration(data:any){
+    return this.http.post('https://pz3unai3uq.us-east-1.awsapprunner.com/register', data);
+  }
+
+  voterRegistration(data:any){
+    return this.http.post('https://pz3unai3uq.us-east-1.awsapprunner.com/checkin', data);
+  }
 }

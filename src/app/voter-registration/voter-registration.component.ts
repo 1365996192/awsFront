@@ -11,6 +11,7 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NzButtonSize } from 'ng-zorro-antd/button';
+import { AppLoginService } from '../service/app-login.service';
 
 @Component({
   selector: 'app-voter-registration',
@@ -29,12 +30,32 @@ export class VoterRegistrationComponent {
     zipCode: FormControl<string>;
     country: FormControl<string>;
     agree: FormControl<boolean>;
+    authCode:FormControl<string>;
   }>;
+  sendingCode=false;
 
   submitVoterForm(): void {
+    console.log(111);
+    
     if (this.voterValidateForm.valid) {
-      console.log('submit', this.voterValidateForm.value);
-      this.router.navigate(['/voterRegLoading']);
+      const data = {
+        firstName: this.voterValidateForm.value.firstName,
+        lastName: this.voterValidateForm.value.lastName,
+        email: this.voterValidateForm.value.email,
+        phone: this.voterValidateForm.value.phone,
+        streetAddress: this.voterValidateForm.value.streetAddress,
+        birth:this.voterValidateForm.value.dob,
+        city: this.voterValidateForm.value.city,
+        authCode:this.voterValidateForm.value.authCode,
+      };
+      this.service.voterRegistration(data).subscribe((response: any) => {
+        console.log('submit', this.voterValidateForm.value);
+        this.router.navigate(['/voterRegLoading']);
+      },
+      (error: any) => {
+        console.log('submit', this.voterValidateForm.value);
+        this.router.navigate(['/voterRegLoading']);
+      })
     } else {
       Object.values(this.voterValidateForm.controls).forEach(control => {
         if (control.invalid) {
@@ -47,7 +68,8 @@ export class VoterRegistrationComponent {
   constructor(
     private fb: NonNullableFormBuilder,
     private i18n: NzI18nService,
-    private router: Router
+    private router: Router,
+    private service: AppLoginService
   ) {
     this.voterValidateForm = this.fb.group({
       firstName: ['', [Validators.required]],
@@ -57,12 +79,28 @@ export class VoterRegistrationComponent {
       email: ['', [Validators.email, Validators.required]],
       streetAddress: ['', [Validators.required]],
       city: ['', [Validators.required]],
-      zipCode: ['', [Validators.required, Validators.pattern(/^1\d{4}$/)]],
+      zipCode: ['', [Validators.required, Validators.pattern(/^\d{4}$/)]],
+      authCode: ['', [Validators.required, Validators.pattern(/^\d{6}$/)]],
       country: ['', [Validators.required]],
       agree: [false]
     });
     this.i18n.setLocale(en_US);
   }
   size: NzButtonSize = 'large';
+  sendVerificationCode() {
+    const email = this.voterValidateForm.get('email').value;
 
+    this.sendingCode = true;
+    this.service.sendAuthCode(email).subscribe(
+      (response: any) => {
+        console.log('验证码已发送', response);
+        this.sendingCode = false;
+      },
+      (error: any) => {
+        console.error('发送验证码失败', error);
+        this.sendingCode = false;
+      }
+    );
+    return false
+  }
 }

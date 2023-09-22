@@ -1,100 +1,233 @@
 <nz-layout class="voter-registration">
-    <nz-header class="voter-registration-header">
-        <h1>Become a Voter</h1>
-    </nz-header>
-    <nz-content class="voter-registration-content">
-        <nz-card class="voter-registration-nz-card">
-            <form nz-form [formGroup]="voterValidateForm" (ngSubmit)="submitVoterForm()">
+  <nz-header class="voter-registration-header">
+    <h1>Become a Voter</h1>
+  </nz-header>
+  <nz-content class="voter-registration-content">
+    <nz-card class="voter-registration-nz-card">
+      <form
+        nz-form
+        [formGroup]="voterValidateForm"
+        (ngSubmit)="submitVoterForm()"
+      >
+        <p>1.Your Name：</p>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName"
+            >First Name</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid First Name!"
+          >
+            <input
+              nz-input
+              formControlName="firstName"
+              id="firstName"
+              placeholder="Please input your first name!"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName"
+            >Last Name</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid Last Name!"
+          >
+            <input
+              nz-input
+              formControlName="lastName"
+              id="lastName"
+              placeholder="Please input your last name!"
+            />
+          </nz-form-control>
+        </nz-form-item>
 
-                <p>1.Your Name：</p>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="firstName">First Name</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid First Name!">
-                        <input nz-input formControlName="firstName" id="firstName"
-                            placeholder="Please input your first name!" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="lastName">Last Name</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Last Name!">
-                        <input nz-input formControlName="lastName" id="lastName"
-                            placeholder="Please input your last name!" />
-                    </nz-form-control>
-                </nz-form-item>
+        <p>2.About you：</p>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired
+            >Birth Date</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid date!"
+          >
+            <nz-date-picker
+              nzPlaceHolder="Please choose birth date"
+              formControlName="dob"
+              style="width: 100%"
+              required
+            ></nz-date-picker>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email"
+            >E-mail</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid E-mail!"
+          >
+            <input
+              nz-input
+              formControlName="email"
+              id="email"
+              placeholder="Ex：xxx@example.com"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone" nzRequired
+            >Authorization Code</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The code is not valid authorization code!"
+          >
+            <input
+              nz-input
+              formControlName="authCode"
+              placeholder="Please input code!"
+            />
+          </nz-form-control>
+          <button
+            nz-button
+            nzType="default"
+            (click)="sendVerificationCode()"
+            [nzLoading]="sendingCode"
+          >
+            Send Code
+          </button>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone"
+            >Phone</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid phone number!"
+          >
+            <input
+              nz-input
+              formControlName="phone"
+              id="phone"
+              placeholder="Please input phone number!"
+            />
+          </nz-form-control>
+        </nz-form-item>
 
-                <p>2.About you：</p>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired>Birth Date</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid date!">
-                        <nz-date-picker nzPlaceHolder="Please choose birth date" formControlName="dob"
-                            style="width: 100%" required></nz-date-picker>
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">E-mail</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-                        <input nz-input formControlName="email" id="email" placeholder="Ex：xxx@example.com" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzFor="phone">Phone</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid phone number!">
-                        <input nz-input formControlName="phone" id="phone" placeholder="Please input phone number!" />
-                    </nz-form-control>
-                </nz-form-item>
+        <p>3.Your address：</p>
+        <p>
+          Enter the address of your residence. You may not use a P. O. Box
+          address.
+        </p>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="streetAddress"
+            >Street Address：</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid Street Address!"
+          >
+            <input
+              nz-input
+              formControlName="streetAddress"
+              id="streetAddress"
+              placeholder="Please input your Street Address!"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="city"
+            >City</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid City!"
+          >
+            <input
+              nz-input
+              formControlName="city"
+              id="city"
+              placeholder="Please input your city of residence!"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="zipCode"
+            >Zip Code</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid Zip Code!"
+          >
+            <input
+              nz-input
+              formControlName="zipCode"
+              id="zipCode"
+              placeholder="Ex：12345"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="country"
+            >Country</nz-form-label
+          >
+          <nz-form-control
+            [nzSm]="14"
+            [nzXs]="24"
+            nzErrorTip="The input is not valid country!"
+          >
+            <input
+              nz-input
+              formControlName="country"
+              id="country"
+              placeholder="Please input country where you live!"
+            />
+          </nz-form-control>
+        </nz-form-item>
 
-                <p>3.Your address：</p>
-                <p>Enter the address of your residence. You may not use a P. O. Box address.</p>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="streetAddress">Street
-                        Address：</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Street Address!">
-                        <input nz-input formControlName="streetAddress" id="streetAddress"
-                            placeholder="Please input your Street Address!" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="city">City</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid City!">
-                        <input nz-input formControlName="city" id="city"
-                            placeholder="Please input your city of residence!" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="zipCode">Zip Code</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid Zip Code!">
-                        <input nz-input formControlName="zipCode" id="zipCode" placeholder="Ex：12345" />
-                    </nz-form-control>
-                </nz-form-item>
-                <nz-form-item>
-                    <nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="country">Country</nz-form-label>
-                    <nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid country!">
-                        <input nz-input formControlName="country" id="country"
-                            placeholder="Please input country where you live!" />
-                    </nz-form-control>
-                </nz-form-item>
-
-                <div class="register-agree">
-                    <nz-form-item nz-row class="register-area" style="margin-left:-100px;">
-                        <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                            <label nzRequired nz-checkbox formControlName="agree">
-                                <span>
-                                    I have read and accept the
-                                    <a>agreement.</a>
-                                </span>
-                            </label>
-                        </nz-form-control>
-                    </nz-form-item>
-                </div>
-                <div class="register-submit-button">
-                    <nz-form-item nz-row class="register-area">
-                        <nz-form-control [nzSpan]="14" [nzOffset]="6">
-                            <button nz-button [nzSize]="size" nzShape="round" nzType="primary"
-                                style="margin-left:30px">Register</button>
-                        </nz-form-control>
-                    </nz-form-item>
-                </div>
-            </form>
-        </nz-card>
-    </nz-content>
+        <div class="register-agree">
+          <nz-form-item
+            nz-row
+            class="register-area"
+            style="margin-left: -100px"
+          >
+            <nz-form-control [nzSpan]="14" [nzOffset]="6">
+              <label nzRequired nz-checkbox formControlName="agree">
+                <span>
+                  I have read and accept the
+                  <a>agreement.</a>
+                </span>
+              </label>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+        <div class="register-submit-button">
+          <nz-form-item nz-row class="register-area">
+            <nz-form-control [nzSpan]="14" [nzOffset]="6">
+              <button
+                nz-button
+                [nzSize]="size"
+                nzShape="round"
+                nzType="primary"
+                style="margin-left: 30px"
+              >
+                Register
+              </button>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </form>
+    </nz-card>
+  </nz-content>
 </nz-layout>
