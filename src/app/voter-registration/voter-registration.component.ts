@@ -34,7 +34,7 @@ export class VoterRegistrationComponent {
   submitVoterForm(): void {
     if (this.voterValidateForm.valid) {
       console.log('submit', this.voterValidateForm.value);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/voterRegLoading']);
     } else {
       Object.values(this.voterValidateForm.controls).forEach(control => {
         if (control.invalid) {

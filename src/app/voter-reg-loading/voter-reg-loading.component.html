@@ -1,0 +1,17 @@
+<nz-layout class="voterRegLoading">
+    <nz-header class="voterRegLoading-header">
+        <nz-page-header class="site-page-header" nzTitle="Welcome"></nz-page-header>
+    </nz-header>
+    <nz-content class="voterRegLoading-content">
+        <h1>
+            Thanks for your submission.<br />Please check your email for details
+        </h1>
+        <div nz-row [nzGutter]="[16, 24]">
+            <div nz-col class="button-group" [nzSpan]="24">
+                <button nz-button nzType="primary" [nzSize]="size" nzShape="round" [routerLink]="['/dashboard']">
+                    OK
+                </button>
+            </div>
+        </div>
+    </nz-content>
+</nz-layout>

@@ -31,7 +31,7 @@ export class AppRegistrationComponent {
   submitForm(): void {
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/appRegLoading']);
     } else {
       Object.values(this.validateForm.controls).forEach(control => {
         if (control.invalid) {

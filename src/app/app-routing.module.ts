@@ -18,6 +18,8 @@ import { AppRegistrationComponent } from './app-registration/app-registration.co
 import { InformationGetComponent } from './information-get/information-get.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { SubmitLoadingComponent } from './information-get/submit-loading/submit-loading.component';
+import { AppRegLoadingComponent } from './app-reg-loading/app-reg-loading.component';
+import { VoterRegLoadingComponent } from './voter-reg-loading/voter-reg-loading.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/start', pathMatch: 'full' },
@@ -28,6 +30,9 @@ const routes: Routes = [
   { path: 'inforGet', component: InformationGetComponent },
   { path: 'userLogin', component: UserLoginComponent },
   { path: 'submitLoading', component: SubmitLoadingComponent },
+  { path: 'appRegLoading', component: AppRegLoadingComponent },
+  { path: 'voterRegLoading', component: VoterRegLoadingComponent },
+
   {
     path: 'survey',
     component: SurveyPageComponent,
